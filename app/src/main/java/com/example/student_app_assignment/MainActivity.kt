@@ -1,12 +1,8 @@
 package com.example.student_app_assignment
 
-import Database
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
 import androidx.activity.ComponentActivity
-import com.example.studentsapp.Student
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : ComponentActivity() {

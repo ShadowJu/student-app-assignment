@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.student_app_assignment.repositories.StudentRepository
 import com.example.studentsapp.Student
 
 class NewStudentActivity : AppCompatActivity() {
@@ -19,9 +21,12 @@ class NewStudentActivity : AppCompatActivity() {
             val phone = findViewById<EditText>(R.id.phoneInput).text.toString()
             val address = findViewById<EditText>(R.id.addressInput).text.toString()
             val newStudent = Student(name, id, phone, address, false)
-            Database.students.add(newStudent)
-            Database.students.forEach { student -> Log.d("Database", "Student: ${student.name}, ID: ${student.id}, Phone: ${student.phone}, address: ${student.address}, Checked: ${student.isChecked}")}
-            finish()
+            if (id.isNotBlank() && name.isNotBlank() && phone.isNotBlank() && address.isNotBlank()) {
+                StudentRepository.addStudent(newStudent);
+                finish()
+            } else {
+                Toast.makeText(this, "All fields are required", Toast.LENGTH_SHORT).show()
+            }
         }
 
         findViewById<Button>(R.id.cancelButton).setOnClickListener {
