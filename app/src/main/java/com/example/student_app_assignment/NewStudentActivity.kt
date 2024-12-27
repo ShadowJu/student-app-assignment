@@ -1,7 +1,7 @@
 package com.example.student_app_assignment
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -23,6 +23,9 @@ class NewStudentActivity : AppCompatActivity() {
             val newStudent = Student(name, id, phone, address, false)
             if (id.isNotBlank() && name.isNotBlank() && phone.isNotBlank() && address.isNotBlank()) {
                 StudentRepository.addStudent(newStudent);
+                val resultIntent = Intent()
+                resultIntent.putExtra("key", "Returned Data")
+                setResult(RESULT_OK, resultIntent)
                 finish()
             } else {
                 Toast.makeText(this, "All fields are required", Toast.LENGTH_SHORT).show()

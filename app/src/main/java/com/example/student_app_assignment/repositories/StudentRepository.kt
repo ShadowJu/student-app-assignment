@@ -4,7 +4,9 @@ import android.util.Log
 import com.example.studentsapp.Student
 
 object StudentRepository {
-    val students = mutableListOf<Student>()
+    val students = mutableListOf<Student>(
+        Student("Alik","212285670","0545206596","Hagdud Haivri 20", false)
+    )
 
     fun addStudent(student: Student){
         students.add((student))
