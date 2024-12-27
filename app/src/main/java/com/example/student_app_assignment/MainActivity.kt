@@ -3,6 +3,7 @@ package com.example.student_app_assignment
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import com.example.student_app_assignment.activites.NewStudentActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : ComponentActivity() {

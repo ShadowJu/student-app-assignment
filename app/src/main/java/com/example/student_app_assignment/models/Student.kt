@@ -1,4 +1,4 @@
-package com.example.studentsapp
+package com.example.student_app_assignment.models
 
 data class Student(var name: String, var id: String, var phone: String, var address: String, var isChecked: Boolean){
     override fun equals(other: Any?): Boolean {
