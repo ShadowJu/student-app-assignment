@@ -6,7 +6,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.student_app_assignment.R
-import com.example.studentsapp.Student
+import com.example.student_app_assignment.models.Student
 
 class StudentAdapter(
     private val students: List<Student>,
@@ -14,16 +14,11 @@ class StudentAdapter(
 
     // ViewHolder class to hold references to the views for each item
     class StudentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val studentImage: ImageView = itemView.findViewById(R.id.studentImage)
-        val studentName: TextView = itemView.findViewById(R.id.studentName)
-        val studentId: TextView = itemView.findViewById(R.id.studentId)
-        val studentCheckBox: CheckBox = itemView.findViewById(R.id.studentCheckBox)
-
         fun bind(student: Student) {
-            studentName.text = student.name
-            studentId.text = student.id
-            studentCheckBox.isChecked = student.isChecked
-            studentImage.setImageResource(R.drawable.studnet) // Replace with your static image resource
+            itemView.findViewById<TextView>(R.id.studentName).text = student.name
+            itemView.findViewById<TextView>(R.id.studentId).text = student.id
+            itemView.findViewById<CheckBox>(R.id.studentCheckBox).isChecked = student.isChecked
+            itemView.findViewById<ImageView>(R.id.studentImage).setImageResource(R.drawable.studnet_img)
         }
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentViewHolder {
