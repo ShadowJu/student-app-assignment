@@ -15,7 +15,7 @@ import com.example.student_app_assignment.listeners.OnStudentClickListener
 import com.example.student_app_assignment.repositories.StudentRepository
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class StudentListActivity : AppCompatActivity(), OnStudentClickListener  {
+class StudentListActivity : AppCompatActivity(), OnStudentClickListener {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: StudentAdapter
     private lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
@@ -33,8 +33,11 @@ class StudentListActivity : AppCompatActivity(), OnStudentClickListener  {
                 val data: Intent? = result.data
                 val extraValue = data?.getStringExtra("activity_key")
 
-                if (extraValue == "ADD_STUDENT"){
+                if (extraValue == "ADD_STUDENT") {
                     adapter.notifyItemInserted(StudentRepository.getStudents().size - 1)
+                }
+                if (extraValue == "UPDATE_STUDENT") {
+                    adapter.notifyItemChanged(StudentRepository.getStudents().size - 1)
                 }
 
             } else {
@@ -44,7 +47,7 @@ class StudentListActivity : AppCompatActivity(), OnStudentClickListener  {
 
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = StudentAdapter(StudentRepository.getStudents(),this)
+        adapter = StudentAdapter(StudentRepository.getStudents(), this)
         recyclerView.adapter = adapter
 
         findViewById<FloatingActionButton>(R.id.AddStudent).setOnClickListener {
@@ -56,5 +59,10 @@ class StudentListActivity : AppCompatActivity(), OnStudentClickListener  {
         val intent = Intent(this, StudentDetailsActivity::class.java)
         intent.putExtra("studentIndex", index)
         startActivity(intent)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        adapter.notifyItemRangeChanged(0, StudentRepository.getStudents().size)
     }
 }
