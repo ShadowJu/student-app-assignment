@@ -21,6 +21,7 @@
         android:id="@+id/detailsImage"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:contentDescription="@string/student_image_description"
         android:src="@drawable/student_img" />
 
     <TextView
