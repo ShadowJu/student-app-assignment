@@ -29,7 +29,7 @@ class StudentListActivity : AppCompatActivity(), OnStudentClickListener {
         activityResultLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) { result ->
-            if (result.resultCode == Activity.RESULT_OK) {
+            if (result.resultCode == RESULT_OK) {
                 val data: Intent? = result.data
                 val extraValue = data?.getStringExtra("activity_key")
 
