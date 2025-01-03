@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">student-app-assignment</string>
+    <string name="student_details_title">Student Details</string>
+    <string name="create_student_title">Create Student</string>
+    <string name="edit_student_title">Edit Student</string>
+    <string name="student_list_title">Students List</string>
 </resources>

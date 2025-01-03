@@ -13,4 +13,17 @@ object StudentRepository {
         students.add((student))
         this.students.forEach { student -> Log.d("StudentRepository", "Student: ${student.name}, ID: ${student.id}, Phone: ${student.phone}, address: ${student.address}, Checked: ${student.isChecked}")}
     }
-}
+
+
+    fun updateStudentByIndex(index: Int,updatedStudent: Student? ) {
+        if (index != -1) {
+            if (updatedStudent != null) {
+                students[index] = updatedStudent
+            }
+        }
+    }
+
+    fun deleteStudent(index: Int) {
+        students.removeAt(index)
+    }
+    }
