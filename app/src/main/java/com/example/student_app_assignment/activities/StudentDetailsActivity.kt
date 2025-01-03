@@ -24,7 +24,7 @@ class StudentDetailsActivity : AppCompatActivity() {
             findViewById<TextView>(R.id.detailsId).text = student.id
             findViewById<TextView>(R.id.detailsAddress).text = student.address
             findViewById<TextView>(R.id.detailsPhone).text = student.phone
-            findViewById<CheckBox>(R.id.studentCheckBox).isChecked = student.isChecked
+            findViewById<CheckBox>(R.id.detailsCheckBox).isChecked = student.isChecked
             val studentImageView: ImageView = findViewById(R.id.detailsImage)
             studentImageView.setImageResource(R.drawable.student_img)
         }
