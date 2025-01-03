@@ -3,7 +3,7 @@ package com.example.student_app_assignment
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import com.example.student_app_assignment.activites.StudentListActivity
+import com.example.student_app_assignment.activities.StudentListActivity
 
 class MainActivity : ComponentActivity() {
 
