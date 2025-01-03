@@ -12,7 +12,6 @@ class StudentAdapter(
     private val students: List<Student>,
 ) : RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() {
 
-    // ViewHolder class to hold references to the views for each item
     class StudentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(student: Student) {
             itemView.findViewById<TextView>(R.id.studentName).text = student.name

@@ -4,10 +4,10 @@ import android.util.Log
 import com.example.student_app_assignment.models.Student
 
 object StudentRepository {
-    val students = mutableListOf<Student>(
+    private val students = mutableListOf<Student>(
     )
-    fun getStudent(): MutableList<Student> {
-        return this.students
+    fun getStudents(): MutableList<Student> {
+        return students
     }
     fun addStudent(student: Student){
         students.add((student))

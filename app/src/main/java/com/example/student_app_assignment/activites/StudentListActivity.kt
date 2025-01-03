@@ -34,17 +34,17 @@ class StudentListActivity : AppCompatActivity() {
                 val extraValue = data?.getStringExtra("activity_key")
 
                 if (extraValue == "ADD_STUDENT"){
-                    adapter.notifyItemInserted(StudentRepository.getStudent().size - 1)
+                    adapter.notifyItemInserted(StudentRepository.getStudents().size - 1)
                 }
 
             } else {
-                println("Activity canceled or failed.")
+                Toast.makeText(this, result.resultCode, Toast.LENGTH_SHORT).show()
             }
         }
 
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = StudentAdapter(StudentRepository.getStudent())
+        adapter = StudentAdapter(StudentRepository.getStudents())
         recyclerView.adapter = adapter
 
         findViewById<FloatingActionButton>(R.id.AddStudent).setOnClickListener {
