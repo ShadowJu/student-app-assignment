@@ -6,10 +6,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.student_app_assignment.R
+import com.example.student_app_assignment.listeners.OnStudentClickListener
 import com.example.student_app_assignment.models.Student
 
 class StudentAdapter(
     private val students: List<Student>,
+    private val listener: OnStudentClickListener
 ) : RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() {
 
     class StudentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -17,7 +19,7 @@ class StudentAdapter(
             itemView.findViewById<TextView>(R.id.studentName).text = student.name
             itemView.findViewById<TextView>(R.id.studentId).text = student.id
             itemView.findViewById<CheckBox>(R.id.studentCheckBox).isChecked = student.isChecked
-            itemView.findViewById<ImageView>(R.id.studentImage).setImageResource(R.drawable.studnet_img)
+            itemView.findViewById<ImageView>(R.id.studentImage).setImageResource(R.drawable.student_img)
         }
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentViewHolder {
@@ -26,6 +28,11 @@ class StudentAdapter(
     }
     override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {
         holder.bind(students[position])
+
+        holder.itemView.setOnClickListener {
+            listener.onStudentClick(position)
+        }
+
     }
     override fun getItemCount(): Int = students.size
 

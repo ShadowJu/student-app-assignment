@@ -1,4 +1,4 @@
-package com.example.student_app_assignment.activites
+package com.example.student_app_assignment.activities
 
 import android.app.Activity
 import android.content.Intent
@@ -16,7 +16,7 @@ class NewStudentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_student)
-
+        title = getString(R.string.create_student_title)
         findViewById<Button>(R.id.addButton).setOnClickListener {
             val id = findViewById<EditText>(R.id.idInput).text.toString()
             val name = findViewById<EditText>(R.id.nameInput).text.toString()
