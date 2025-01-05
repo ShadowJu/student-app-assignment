@@ -30,7 +30,7 @@ class StudentAdapter(
         holder.bind(students[position])
 
         holder.itemView.setOnClickListener {
-            listener.onStudentClick(position)
+            listener.onStudentClick(students[position].uuid)
         }
 
     }

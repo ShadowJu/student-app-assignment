@@ -13,6 +13,7 @@ import com.example.student_app_assignment.R
 import com.example.student_app_assignment.listeners.OnStudentClickListener
 import com.example.student_app_assignment.repositories.StudentRepository
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import java.util.UUID
 
 class StudentListActivity : AppCompatActivity(), OnStudentClickListener {
     private lateinit var recyclerView: RecyclerView
@@ -54,9 +55,9 @@ class StudentListActivity : AppCompatActivity(), OnStudentClickListener {
         }
     }
 
-    override fun onStudentClick(index: Int) {
+    override fun onStudentClick(studentUUID: UUID) {
         val intent = Intent(this, StudentDetailsActivity::class.java)
-        intent.putExtra("studentIndex", index)
+        intent.putExtra("studentUUID", studentUUID.toString())
         startActivity(intent)
     }
 
