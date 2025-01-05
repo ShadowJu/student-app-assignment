@@ -10,7 +10,7 @@
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Student Details"
+        android:text="@string/student_details_title"
         android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -21,13 +21,14 @@
         android:id="@+id/detailsImage"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:contentDescription="@string/student_image_description"
         android:src="@drawable/student_img" />
 
     <TextView
         android:id="@+id/detailsName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Name"
+        android:text="@string/student_name"
         android:textSize="18sp"
         android:paddingTop="8dp" />
 
@@ -35,7 +36,7 @@
         android:id="@+id/detailsId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ID"
+        android:text="@string/student_id"
         android:textSize="18sp"
         android:paddingTop="8dp" />
 
@@ -44,7 +45,7 @@
         android:id="@+id/detailsPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Phone"
+        android:text="@string/student_phone"
         android:textSize="18sp"
         android:paddingTop="8dp" />
 
@@ -52,13 +53,13 @@
         android:id="@+id/detailsAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Address"
+        android:text="@string/student_address"
         android:textSize="18sp"
         android:paddingTop="8dp" />
 
     <CheckBox
         android:id="@+id/detailsCheckBox"
-        android:text="Checked"
+        android:text="@string/checked"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -66,9 +67,9 @@
         android:id="@+id/editButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Edit"
+        android:text="@string/edit_button"
         android:layout_gravity="end|bottom"
         android:layout_marginBottom="16dp"
-        android:layout_marginLeft="16dp"/>
+        android:layout_marginStart="16dp"/>
 
 </LinearLayout>

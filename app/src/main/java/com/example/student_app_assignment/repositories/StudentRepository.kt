@@ -6,16 +6,27 @@ import com.example.student_app_assignment.models.Student
 object StudentRepository {
     private val students = mutableListOf<Student>(
     )
+
     fun getStudents(): MutableList<Student> {
         return students
     }
-    fun addStudent(student: Student){
+
+    fun getStudent(index:Int): Student {
+        return students[index]
+    }
+
+    fun addStudent(student: Student) {
         students.add((student))
-        this.students.forEach { student -> Log.d("StudentRepository", "Student: ${student.name}, ID: ${student.id}, Phone: ${student.phone}, address: ${student.address}, Checked: ${student.isChecked}")}
+        this.students.forEach { student ->
+            Log.d(
+                "StudentRepository",
+                "Student: ${student.name}, ID: ${student.id}, Phone: ${student.phone}, address: ${student.address}, Checked: ${student.isChecked}"
+            )
+        }
     }
 
 
-    fun updateStudentByIndex(index: Int,updatedStudent: Student? ) {
+    fun updateStudentByIndex(index: Int, updatedStudent: Student?) {
         if (index != -1) {
             if (updatedStudent != null) {
                 students[index] = updatedStudent
@@ -26,4 +37,4 @@ object StudentRepository {
     fun deleteStudent(index: Int) {
         students.removeAt(index)
     }
-    }
+}
