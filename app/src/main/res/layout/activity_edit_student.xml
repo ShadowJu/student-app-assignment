@@ -7,13 +7,15 @@
 
     <TextView
         android:id="@+id/titleTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="@string/edit_student_title"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_500"
         android:gravity="center"
-        android:layout_marginBottom="16dp"/>
+        android:padding="16dp"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
 
     <ImageView
         android:id="@+id/studentImage"
