@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.student_app_assignment.R
 import com.example.student_app_assignment.repositories.StudentRepository
 import com.example.student_app_assignment.models.Student
+import java.util.UUID
 
 class NewStudentActivity : AppCompatActivity() {
 
@@ -22,7 +23,7 @@ class NewStudentActivity : AppCompatActivity() {
             val name = findViewById<EditText>(R.id.nameInput).text.toString()
             val phone = findViewById<EditText>(R.id.phoneInput).text.toString()
             val address = findViewById<EditText>(R.id.addressInput).text.toString()
-            val newStudent = Student(name, id, phone, address, false)
+            val newStudent = Student(UUID.randomUUID(), name, id, phone, address, false)
             if (id.isNotBlank() && name.isNotBlank() && phone.isNotBlank() && address.isNotBlank()) {
                 StudentRepository.addStudent(newStudent);
                 val intent = Intent()
